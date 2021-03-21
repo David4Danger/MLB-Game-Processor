@@ -1,10 +1,12 @@
 package com.mlb.game.processor.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@JsonInclude(JsonInclude.Include.NON_NULL) // ignore pitcher stats for hitter and vice versa
 public class PlayerStats {
     // Populated for both 'hitting' and 'pitching' stat_group
     // Consider stats like hits as hits *for* hitter vs hits *against* pitcher, obp *for* hitter vs obp *against* pitcher
